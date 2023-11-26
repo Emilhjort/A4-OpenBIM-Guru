@@ -181,6 +181,8 @@ model.write('path/to/your/ifcfile.ifc')
 
 Copy the code into Blender 3.6 and run the code. When the code has been utilized, there will be a new IFC model created with the new property set added.
 
+This tool is meant to undergo further development for the modification of the IFC model; however, the current code represents a preliminary draft for this ongoing development.
+
 
 
 
