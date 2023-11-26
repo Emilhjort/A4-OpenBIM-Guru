@@ -97,4 +97,82 @@ Example of output:
 
 This tool is meant to undergo further development for the extraction of multiple properties; however, the current code represents a preliminary draft for this ongoing development.
 
+## Tutorial 2 - Modification of the IFC model
+If the IFC file lacks the essential properties for extraction, the following Python code is developed to create new property sets. This code serves as an example of how to add a specific property to an IFC model. Running this code will add the “MassDensityUnit” property from “Pset_MaterialCommon” with the unit specified as kg/m3 to concrete materials in the model. It should be noted that this script requires user input for the density values. 
+
+Furthermore, the code will result in the generation of a new IFC file with the new property set added to the model.
+
+Snapshot of the code:
+```
+# Import Path and ifcopenshell
+from pathlib import Path
+import ifcopenshell
+
+# Define modelname
+modelname = "Name_of_IFC_model"
+
+
+# Search for filepath and check if model folder exists and run script on model 
+try:
+    dir_path = Path(__file__).parent
+    model_url = Path.joinpath(dir_path, 'model', modelname).with_suffix('.ifc')
+    model = ifcopenshell.open(model_url)
+except OSError:
+    try:
+        import bpy
+        model_url = Path.joinpath(Path(bpy.context.space_data.text.filepath).parent, 'model', modelname).with_suffix('.ifc')
+        model = ifcopenshell.open(model_url)
+    except OSError:
+        print(f"ERROR: please check your model folder : {model_url} does not exist")
+        
+    
+def handle_model(model):
+    # Find all the IFC walls
+    walls = model.by_type("IfcWall")
+
+    # Find the material that corresponds to concrete
+    concrete_materials = model.by_type("IfcMaterial")
+    concrete_material = None
+    for material in concrete_materials:
+        if "concrete" in material.Name.lower():
+            concrete_material = material
+            break
+
+    if not concrete_material:
+        print("No concrete material found")
+        return
+
+    # Create a new property set and add it to the concrete material
+    new_material_pset = ifcopenshell.api.run(
+        "pset.add_pset", model, product=concrete_material, name="Pset_MaterialCommon"
+    )
+
+    # Edit the property set by providing a dictionary with the properties to define
+    ifcopenshell.api.run(
+        "pset.edit_pset",
+        model,
+        pset=new_material_pset,
+        properties={"MassDensity": Insert_MassDensity_Value, "MassDensityUnit": "kg/m3"},
+    )
+
+    # Apply the new property set to all IFC walls with the concrete material
+    for wall in walls:
+        wall_material = ifcopenshell.util.element.get_material(wall)
+        if wall_material == concrete_material:
+            wall_material_psets = ifcopenshell.util.element.get_psets(wall_material)
+            wall_material_psets.append(new_material_pset)
+            ifcopenshell.util.element.set_psets(wall_material, wall_material_psets)
+
+
+# Create new IFC file with new property to concrete material
+model.write('path/to/your/ifcfile.ifc')
+```
+For the second tutorial, we will show you how to modify an IFC model. If you haven't watched the first tutorial I will recommend you pause this video and go watch that one first.  
+
+This script is for adding properties where the first tutorial showcased how to extract them. I will be running an example of how you can create new property sets and add them to specific building parts. 
+
+Running this script will add the “MassDensityUnit” property from “Pset_materialCommon” to concrete materials. If you are wondering about  “MassDensityUnit” and “Pset_materialCommon” it is just the standard naming format for IFC properties. All we are doing is adding density to concrete elements. 
+
+It should be noted that the script requires user input. You need to insert the numerical values and units yourself. After running the script, a new IFC model should be generated with the new property sets added. 
+
 
