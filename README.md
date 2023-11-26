@@ -106,6 +106,9 @@ If the IFC file lacks the essential properties for extraction, the following Pyt
 
 Furthermore, the code will result in the generation of a new IFC file with the new property set added to the model.
 
+It should be noted that the script requires user input. 
+You need to insert the numerical values of MassDensity and the path to the folder for the new file.
+
 Snapshot of the code:
 ```
 # Import Path and ifcopenshell
@@ -172,9 +175,8 @@ def handle_model(model):
 model.write('path/to/your/ifcfile.ifc')
 ```
 
-Running this script will add the “MassDensityUnit” property from “Pset_materialCommon” to concrete materials. If you are wondering about  “MassDensityUnit” and “Pset_materialCommon” it is just the standard naming format for IFC properties. All we are doing is adding density to concrete elements. 
+Copy the code into Blender 3.6 and run the code. When the code has been utilized, there will be a new IFC model created with the new property set added.
 
-It should be noted that the script requires user input. You need to insert the numerical values and units yourself. After running the script, a new IFC model should be generated with the new property sets added. 
 
 
 
