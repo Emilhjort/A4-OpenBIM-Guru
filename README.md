@@ -167,12 +167,10 @@ def handle_model(model):
 # Create new IFC file with new property to concrete material
 model.write('path/to/your/ifcfile.ifc')
 ```
-For the second tutorial, we will show you how to modify an IFC model. If you haven't watched the first tutorial I will recommend you pause this video and go watch that one first.  
-
-This script is for adding properties where the first tutorial showcased how to extract them. I will be running an example of how you can create new property sets and add them to specific building parts. 
 
 Running this script will add the “MassDensityUnit” property from “Pset_materialCommon” to concrete materials. If you are wondering about  “MassDensityUnit” and “Pset_materialCommon” it is just the standard naming format for IFC properties. All we are doing is adding density to concrete elements. 
 
 It should be noted that the script requires user input. You need to insert the numerical values and units yourself. After running the script, a new IFC model should be generated with the new property sets added. 
 
+https://discordapp.com/channels/@me/1132621544686886955/1178309505688276992
 
