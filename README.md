@@ -23,6 +23,8 @@ Our tool is specifically designed for utilization by the role of “Analyst Leve
 
 # Tutorials
 ## Tutorial 1 - Extraction of wall data
+This turorial will take you through the tool step by step. For additional help, see video "Extraction of wall data"
+
 Before running the script, make sure that your IFC model has quantities added. The following link will take you to a separate guide that will show you how it is done in BlenderBim:
 
 https://github.com/timmcginley/41934/blob/main/Concepts/BlenderBIM/AddQuantitiesToIfcModelInBlenderBIM/README.md
@@ -98,6 +100,8 @@ Example of output:
 This tool is meant to undergo further development for the extraction of multiple properties; however, the current code represents a preliminary draft for this ongoing development.
 
 ## Tutorial 2 - Modification of the IFC model
+This turorial will take you through the tool step by step. For additional help, see video "Modification of the IFC model"
+
 If the IFC file lacks the essential properties for extraction, the following Python code is developed to create new property sets. This code serves as an example of how to add a specific property to an IFC model. Running this code will add the “MassDensityUnit” property from “Pset_MaterialCommon” with the unit specified as kg/m3 to concrete materials in the model. It should be noted that this script requires user input for the density values. 
 
 Furthermore, the code will result in the generation of a new IFC file with the new property set added to the model.
@@ -172,5 +176,5 @@ Running this script will add the “MassDensityUnit” property from “Pset_mat
 
 It should be noted that the script requires user input. You need to insert the numerical values and units yourself. After running the script, a new IFC model should be generated with the new property sets added. 
 
-https://discordapp.com/channels/@me/1132621544686886955/1178309505688276992
+
 
