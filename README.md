@@ -107,12 +107,11 @@ This turorial will take you through the tool step by step. For additional help, 
 
 https://github.com/Emilhjort/A4-OpenBIM-Guru/assets/145363406/1813caa5-632d-4221-ae19-1d9c50e9bcb9
 
-If the IFC file lacks the essential properties for extraction, the following Python code is developed to create new property sets. This code serves as an example of how to add a specific property to an IFC model. Running this code will add the “MassDensityUnit” property from “Pset_MaterialCommon” with the unit specified as kg/m3 to concrete materials in the model. It should be noted that this script requires user input for the density values. 
+If the IFC file lacks the essential properties for extraction, the following Python code is developed to create new property sets. This code serves as an example of how to add a specific property to an IFC model. Running this code will add the “MassDensityUnit” property from “Pset_MaterialCommon” with the unit specified as kg/m3 to concrete materials in the model.
 
 Furthermore, the code will result in the generation of a new IFC file with the new property set added to the model.
 
-It should be noted that the script requires user input. 
-You need to insert the numerical values of MassDensity and the path to the folder for the new file.
+It should be noted that this script requires user input for the density values and the path to your folder for the new IFC model.
 
 Snapshot of the code:
 ```
