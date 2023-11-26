@@ -22,8 +22,10 @@ The tool was created entirely within Blender, utilizing the program's scripting 
 Our tool is specifically designed for utilization by the role of “Analyst Level 1” since its primary objective is to analyze a standard IFC file and extract essential LCA data. This data would be presented in a comprehensive Excel-sheet overview, aiding sustainability engineers in their analysis and decision-making processes. However, due to its current limited LOD, the tool remains at Level 1.
 
 # Tutorials
-## Tutorial 1 - Extraction of wall data
-This turorial will take you through the tool step by step. For additional help, see video "Extraction of wall data"
+## Tutorial 1 - Extraction of properties
+This turorial will take you through the tool step by step. For additional help, see the following tutorial video "Extraction of properties"
+
+https://github.com/Emilhjort/A4-OpenBIM-Guru/assets/145363406/d824928a-9c4e-4d8c-ba78-a907f058134d
 
 Before running the script, make sure that your IFC model has quantities added. The following link will take you to a separate guide that will show you how it is done in BlenderBim:
 
@@ -96,6 +98,7 @@ Copy the code into Blender 3.6 and run the code. In the window of Toggle System 
 Example of output:
 
 <img width="546" alt="BIM_A4_2" src="https://github.com/Emilhjort/A4-OpenBIM-Guru/assets/145363406/6a295bd5-01bb-4b5b-bc67-d65741b118ae">
+
 
 This tool is meant to undergo further development for the extraction of multiple properties; however, the current code represents a preliminary draft for this ongoing development.
 
