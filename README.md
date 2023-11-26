@@ -100,7 +100,9 @@ Example of output:
 This tool is meant to undergo further development for the extraction of multiple properties; however, the current code represents a preliminary draft for this ongoing development.
 
 ## Tutorial 2 - Modification of the IFC model
-This turorial will take you through the tool step by step. For additional help, see video "Modification of the IFC model"
+This turorial will take you through the tool step by step. For additional help, see the following tutorial video "Modification of the IFC model"
+
+https://github.com/Emilhjort/A4-OpenBIM-Guru/assets/145363406/df9328ea-d116-4be1-ab41-01ec86379866
 
 If the IFC file lacks the essential properties for extraction, the following Python code is developed to create new property sets. This code serves as an example of how to add a specific property to an IFC model. Running this code will add the “MassDensityUnit” property from “Pset_MaterialCommon” with the unit specified as kg/m3 to concrete materials in the model. It should be noted that this script requires user input for the density values. 
 
