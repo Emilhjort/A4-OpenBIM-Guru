@@ -92,6 +92,7 @@ for wall_type, properties in wall_type_properties.items():
 Copy the code into Blender 3.6 and run the code. In the window of Toggle System Console a list of every WallType and the associated NetSideArea and NetVolume will be displayed.
 
 Example of output:
+
 <img width="546" alt="BIM_A4_2" src="https://github.com/Emilhjort/A4-OpenBIM-Guru/assets/145363406/6a295bd5-01bb-4b5b-bc67-d65741b118ae">
 
 This tool is meant to undergo further development for the extraction of multiple properties; however, the current code represents a preliminary draft for this ongoing development.
